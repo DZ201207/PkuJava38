@@ -1,0 +1,32 @@
+class MinStack 
+{
+    private Stack<Integer> stack = new Stack<Integer>();//存放当前的所有元素
+	private Stack<Integer> min_stack = new Stack<Integer>();//栈顶元素是当前所有元素的最小值
+    public void push(int x) 
+    {
+        if (min_stack.isEmpty() || min_stack.peek()>=x) 
+        {
+				min_stack.push(x);
+		}
+	    stack.push(x);
+    }
+
+    public void pop() 
+    {
+       int item = stack.pop();
+	   if (min_stack.peek()==item)
+	   {
+				min_stack.pop();
+	   } 
+    }
+
+    public int top() 
+    {
+        return stack.peek(); //读取但不删除
+    }
+
+    public int getMin() 
+    {
+        return min_stack.peek(); 
+    }
+}
