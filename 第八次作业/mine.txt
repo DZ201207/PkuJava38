@@ -1,0 +1,4 @@
+
+hashset的使用，String和Int，逐位计算
+
+T121 没做  用到 动态规划
